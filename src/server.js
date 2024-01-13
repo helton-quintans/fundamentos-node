@@ -6,7 +6,9 @@ const server = http.createServer((req, res) => {
     const {method, url} = req
 
     if(method === 'GET' && url === '/users') {
-        return res.end(JSON.stringify(users))
+        return res
+            .setHeader('Content-Type', 'application/json')
+            .end(JSON.stringify(users))
     }
 
     if(method === 'POST' && url === '/users') {
@@ -15,11 +17,10 @@ const server = http.createServer((req, res) => {
             name: 'jon',
             email: 'jonhdoe@email.com'
         })
-        return res.end('Criação de usuário')
+        return res.writeHead(201).end('')
     }
 
-    console.log(method, url)
-    return res.end('Hello carai')
+    return res.writeHead(404).end('Not found')
 })
 
 server.listen(3333)
