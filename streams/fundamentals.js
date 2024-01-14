@@ -37,7 +37,6 @@ class ConvertToNegativeNumberStream extends Transform {
             Buffer.from(String(transformed))
         )
     }
-
 }
 
 new OneToHundredStream()
