@@ -1,12 +1,16 @@
 // process.stdin
 //     .pipe(process.stdout)
 
+// Objective: Able to work with data received in chunks.
+
 import { Readable, Writable, Transform } from 'node:stream'
 
+//Readble Stream - ex. read csv file, read from a database, read from an API, etc
 class OneToHundredStream extends Readable {
     index = 1
 
     _read() {
+        //simulate a slow data source
         const i = this.index++
 
         setTimeout(() => {
@@ -40,5 +44,5 @@ class ConvertToNegativeNumberStream extends Transform {
 }
 
 new OneToHundredStream()
-    .pipe(new ConvertToNegativeNumberStream)
-    .pipe(new MultpliyByStream())
+    .pipe(new ConvertToNegativeNumberStream) // ReadableStream => TransformStream
+    .pipe(new MultpliyByStream()) // WritableStream
