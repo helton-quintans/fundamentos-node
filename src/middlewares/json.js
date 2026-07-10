@@ -1,5 +1,5 @@
 export async function json(req, res, next) {
-  const buffers = []
+    const buffers = []
 
     for await (const chunck of req) {
         buffers.push(chunck)
@@ -10,4 +10,6 @@ export async function json(req, res, next) {
     } catch {
         req.body = null
     }
+
+    res.setHeader('Content-Type', 'application/json')
 }
