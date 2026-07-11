@@ -1,0 +1,102 @@
+{
+  "info": {
+    "_postman_id": "c1d329b3-87db-43af-88d1-cb27042cee80",
+    "name": "fundamentos-node",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22814024",
+    "_collection_link": "https://go.postman.co/collection/22814024-c1d329b3-87db-43af-88d1-cb27042cee80?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "List users",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Delete user",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Heltin\",\n    \"email\":\"heltin@massa.com\"\n}"
+            },
+            "url": {
+              "raw": "localhost:3333/users/7adca361-ac94-4829-9735-5aa14670f158",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "users",
+                "7adca361-ac94-4829-9735-5aa14670f158"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create user",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"kelin\",\n    \"email\":\"heltin@massa.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3333/users",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update user",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Helton\",\n    \"email\":\"helton@email.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:3333/users/16ce48db-f2eb-4cad-afaa-c302ff451a37",
+              "host": [
+                "localhost"
+              ],
+              "port": "3333",
+              "path": [
+                "users",
+                "16ce48db-f2eb-4cad-afaa-c302ff451a37"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
